@@ -1,20 +1,9 @@
 from feature_lib.etl_abc import AbstractEtl
 
 
-class Etl(object):
-    class _ETL(AbstractEtl):
-        def extract(self):
-            self.df.dropna(subset=["user_id"], inplace=True)
-            self.df["creation_to_binding"] = self.df.binding_date - self.df.creation_date
-            self.df.set_index("user_id", inplace=True)
-            return self.df
-
-    instance = None
-
-    def __new__(
-        cls,
-        df
-    ):
-        if Etl.instance is None:
-            Etl.instance = Etl._ETL(df)
-        return Etl.instance
+class ETL(AbstractEtl):
+    def extract(self):
+        self.df.dropna(subset=["user_id"], inplace=True)
+        self.df["creation_to_binding"] = self.df.binding_date - self.df.creation_date
+        self.df.set_index("user_id", inplace=True)
+        return self.df

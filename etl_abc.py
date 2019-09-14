@@ -2,7 +2,7 @@ import pandas as pd
 
 from abc import abstractmethod, ABC
 
-class AbstractEtl(object):
+class AbstractEtl(ABC):
     
     def df_schema(self, df: pd.core.frame.DataFrame)->dict:
         return {c: str(t) for c,t in zip(df.columns, df.dtypes)}
@@ -23,6 +23,7 @@ class AbstractEtl(object):
         is_equal = len(differences) == 0
         return is_equal
 
+    @abstractmethod
     def extract(self) -> pd.core.frame.DataFrame:
         """developer will have to implement this function for feature extraction
         for self.df
