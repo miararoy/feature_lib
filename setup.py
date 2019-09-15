@@ -6,7 +6,7 @@ setup(
     author='Roy Miara',
     author_email='miararoy@gmail.com',
     packages=[
-        'etl_abc.AbstractEtl'
+        'etl_abc'
     ],
     install_requires=[
         'pandas==0.25.0'
