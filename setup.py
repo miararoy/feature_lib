@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='feature_lib',
+    name='featureUtils',
     url='https://github.com/miararoy/feature_lib',
     author='Roy Miara',
     author_email='miararoy@gmail.com',
