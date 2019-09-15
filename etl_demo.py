@@ -1,5 +1,4 @@
-from feature_lib.etl_abc import AbstractEtl
-
+from etl_abc import AbstractEtl
 
 class Etl(AbstractEtl):
     def extract(self):
